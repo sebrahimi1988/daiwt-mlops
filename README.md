@@ -81,7 +81,7 @@ To start over or delete all of the resources in a given workspace, run the `demo
            ```
            See the Limitations section below regarding running multitask jobs. In order to reduce cluster start up time
            you may want to consider using a [Databricks pool](https://docs.databricks.com/clusters/instance-pools/index.html), 
-           and specify this pool ID in [`conf/deployment.yml`]((https://github.com/RafiKurlansik/daiwt-mlops/blob/main/conf/deployment.yml).
+           and specify this pool ID in [`conf/deployment.yml`](https://github.com/RafiKurlansik/daiwt-mlops/blob/main/conf/deployment.yml).
     - `PROD-telco-churn-initial-model-train-register` tasks:
         1. Demo setup task steps ([`demo-setup`](https://github.com/RafiKurlansik/daiwt-mlops/blob/main/telco_churn/pipelines/demo_setup_job.py))
             1. Delete Model Registry model if exists (archive any existing models).
