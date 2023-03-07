@@ -5,6 +5,12 @@ extended to run pipelines/tasks.
 import os
 import sys
 from dataclasses import dataclass
+import subprocess
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install("python-dotenv==0.20.0")
 
 import yaml
 import pathlib
