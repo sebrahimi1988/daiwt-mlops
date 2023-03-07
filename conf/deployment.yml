@@ -2,7 +2,7 @@ custom:
 
   # Cluster configs for each environment test
   default-cluster-spec: &default-cluster-spec
-    spark_version: '12.2.x-cpu-ml-scala2.12'
+    spark_version: '11.3.x-cpu-ml-scala2.12'
     #node_type_id: 'Standard_DS3_v2' # NOTE: this is an AWS-specific instance type. Change accordingly if running on Azure or GCP.
     #driver_node_type_id: 'Standard_DS3_v2'  # NOTE: this is an AWS-specific instance type. Change accordingly if running on Azure or GCP.
     num_workers: 1
@@ -14,7 +14,7 @@ custom:
     instance_pool_id: '0306-154610-mines187-pool-k93fghke'
 
   prod-cluster-spec: &prod-cluster-spec
-    spark_version: '12.2.x-cpu-ml-scala2.12'
+    spark_version: '11.3.x-cpu-ml-scala2.12'
     #node_type_id: 'Standard_DS3_v2' # NOTE: this is an AWS-specific instance type. Change accordingly if running on Azure or GCP.
     #driver_node_type_id: 'Standard_DS3_v2'  # NOTE: this is an AWS-specific instance type. Change accordingly if running on Azure or GCP.
     num_workers: 1
