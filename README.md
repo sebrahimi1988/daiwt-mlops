@@ -55,6 +55,8 @@ The following outlines the workflow to demo the repo.
         - `GH_TOKEN`
             - GitHub [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 1. Update `notebook_path` and `git_url` in [deployment.yml](https://github.com/RafiKurlansik/daiwt-mlops/blob/main/conf/deployment.yml) to reference your own notebook paths and git repository.
+1. Clone the repo in your Databricks Staging and Prod environments (in Repos).
+2. Make sure the dbx version you have on your local machine is 0.7.6. 
 
 #### Starting from scratch
 To start over or delete all of the resources in a given workspace, run the `demo-setup` pipeline.  As part of the `initial-model-train-register` multitask job, the first task `demo-setup` will delete any existing resources, as specified in [`demo_setup.yml`](https://github.com/RafiKurlansik/daiwt-mlops/blob/main/telco_churn/pipelines/demo_setup_job.py).
@@ -76,8 +78,8 @@ To start over or delete all of the resources in a given workspace, run the `demo
         1. Run the multitask `PROD-telco-churn-initial-model-train-register` job via an automated job cluster in the prod environment
            - **NOTE:** multitask jobs can only be run via `dbx deploy; dbx launch` currently).
            ```
-           dbx deploy --jobs=PROD-telco-churn-initial-model-train-register --environment=prod --files-only
-           dbx launch --job=PROD-telco-churn-initial-model-train-register --environment=prod --as-run-submit --trace
+           dbx deploy -e prod --deployment-file conf/deployment.yml daiwt-PROD-telco-churn-initial-model-train-register
+           dbx launch -e prod --trace daiwt-PROD-telco-churn-initial-model-train-register
            ```
            See the Limitations section below regarding running multitask jobs. In order to reduce cluster start up time
            you may want to consider using a [Databricks pool](https://docs.databricks.com/clusters/instance-pools/index.html), 
