@@ -1,3 +1,5 @@
+# DBTITLE 1,pip install requirements.txt
+# MAGIC %pip install -r ../../requirements.txt
 import os
 
 import mlflow
