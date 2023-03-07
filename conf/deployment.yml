@@ -123,7 +123,7 @@ environments:
             <<:
               - *prod-cluster-config
             spark_python_task:
-              python_file: '/Repos/omar.hamdan@databricks.com/databricks-mlops/notebooks/demo_setup_job.py'
+              python_file: '/Repos/omar.hamdan@databricks.com/databricks-mlops/notebooks/demo_setup'
               parameters: ['--base-data-params', 'file:fuse://conf/.base_data_params.env',
                            '--env', 'file:fuse://conf/prod/.prod.env',
                            '--conf-file', 'file:fuse://conf/pipeline_configs/demo_setup.yml']
