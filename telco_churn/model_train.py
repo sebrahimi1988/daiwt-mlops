@@ -229,7 +229,7 @@ class ModelTrain:
             # Log metrics for the test set
             _logger.info('==========Model Evaluation==========')
             _logger.info('Evaluating and logging metrics')
-            test_metrics = mlflow.sklearn.eval_and_log_metrics(model, X_test, y_test, prefix='test_')
+            test_metrics = mlflow.evaluate(model, X_test, y_test, prefix='test_')
             print(pd.DataFrame(test_metrics, index=[0]))
 
             # Register model to MLflow Model Registry if provided
